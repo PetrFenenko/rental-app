@@ -182,7 +182,7 @@ export default function Modal({ BookingData, DisplayModal, setDisplayModal }) {
                 })}
               />
 
-              {errors.lastname && (
+              {errors.firstname && (
                 <p className="text-red-400 text-sm font-medium">
                   This field is required
                 </p>

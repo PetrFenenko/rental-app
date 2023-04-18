@@ -11,7 +11,7 @@ export default function FAQ() {
   };
   return (
     <section className="w-full py-20">
-      <div className="max-w-[87rem] h-[40rem] mx-auto">
+      <div className="max-w-[87rem] h-fit min-h-[40rem] mx-auto">
         <Image
           className="max-w-[32rem] absolute right-0 mt-60 z-10"
           height={960}
@@ -28,7 +28,7 @@ export default function FAQ() {
             FAQs: Car Rental Booking on Our Website - Common Inquiries
             Addressed.
           </h1>
-          <div className="bg-stone-50 flex flex-col shadow-md border max-w-[65rem] mt-10 mx-auto">
+          <div className="bg-stone-50 flex flex-col shadow-md h-fit border max-w-[65rem] mt-10 mx-auto">
             {/* rendering questions  */}
             {FAQ_DATA.map((e, i) => {
               return (
@@ -50,10 +50,10 @@ export default function FAQ() {
                   </button>
                   <div
                     className={`${
-                      i === question ? "max-h-52" : "max-h-0"
+                      i === question ? "max-h-60" : "max-h-0"
                     } h-fit overflow-hidden transition-[max-height] ease-linear duration-500 `}
                   >
-                    <p className="font-medium text-gray-500 text-start py-5 px-8">
+                    <p className="font-medium text-gray-500 h-fit text-start py-5 px-8">
                       {e.answer}
                     </p>
                   </div>
