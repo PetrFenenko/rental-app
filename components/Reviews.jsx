@@ -80,9 +80,9 @@ export default function Reviews() {
             {/* Content */}
 
             <div
-              className={`flex transition-transform duration-500 min-w-full -translate-x-[${
+              className={`-translate-x-[${
                 100 * currentReview
-              }%]`}
+              }%] flex transition-transform duration-500 min-w-full `}
             >
               {REVIEW_DATA.map((review, i) => (
                 <div
