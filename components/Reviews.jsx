@@ -81,7 +81,7 @@ export default function Reviews() {
 
             <div
               className={`flex transition-transform duration-500 min-w-full -translate-x-[${
-                currentReview * 100
+                100 * currentReview
               }%]`}
             >
               {REVIEW_DATA.map((review, i) => (
@@ -102,7 +102,7 @@ export default function Reviews() {
                     </div>
                   </div>
                   <ImQuotesRight
-                    className="absolute top-56 right-10 z-10 opacity-20"
+                    className="self-end z-10 opacity-20"
                     size="70"
                     color="#60a5fa"
                   />
