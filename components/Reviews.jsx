@@ -80,7 +80,7 @@ export default function Reviews() {
             {/* Content */}
 
             <div
-              className={`-translate-x-[${
+              className={`translate-x-[-${
                 100 * currentReview
               }%] flex transition-transform duration-500 min-w-full `}
             >
