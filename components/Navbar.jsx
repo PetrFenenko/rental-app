@@ -50,13 +50,10 @@ export default function Navbar() {
 
           <ul className="hidden md:flex my-auto gap-x-8">
             <li className="text-md text-gray-700 font-bold hover:text-blue-400 transition-colors duration-500  ">
-              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
             </li>
             <li className="text-md text-gray-700 font-bold hover:text-blue-400 transition-colors duration-500">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="text-md text-gray-700 font-bold hover:text-blue-400 transition-colors duration-500">
-              <Link href="/">Home</Link>
+              <Link href="/cars">Our Cars</Link>
             </li>
           </ul>
 
@@ -92,13 +89,10 @@ export default function Navbar() {
         >
           <ul className="flex flex-col text-xl text-center ">
             <li className="text-2xl mx-1 mt-5 border py-2 text-gray-600 font-bold bg-gray-200 hover:bg-gray-300">
-              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
             </li>
             <li className="text-2xl mx-1 mt-5 border py-2 text-gray-600 font-bold bg-gray-200 hover:bg-gray-300">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="text-2xl mx-1 mt-5 border py-2 text-gray-600 font-bold bg-gray-200 hover:bg-gray-300">
-              <Link href="/">Home</Link>
+              <Link href="/cars">Our Cars</Link>
             </li>
           </ul>
 

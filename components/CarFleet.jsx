@@ -5,8 +5,11 @@ import { CAR_DATA } from "./CarData";
 export default function CarFleet({ scrollToBook }) {
   const [car, setCar] = useState(CAR_DATA[0]);
 
+  const [loading, setLoading] = useState(false);
+
   const handleSelect = (e) => {
     setCar(CAR_DATA.find((i) => i.name === e.target.id));
+    setLoading(true);
   };
 
   return (
@@ -43,9 +46,14 @@ export default function CarFleet({ scrollToBook }) {
 
             {/* CAR Image */}
 
-            <div className="h-[22rem] col-span-4 lg:col-span-2  md:order-first lg:order-none flex items-center">
+            <div className="h-[22rem] col-span-4 lg:col-span-2 md:order-first lg:order-none flex items-center">
               <Image
-                className="md:col-span-2 mx-auto"
+                onLoadingComplete={() => {
+                  setLoading(false);
+                }}
+                className={`md:col-span-2 mx-auto ${
+                  loading ? "opacity-0" : "opacity-100"
+                } transition-opacity duration-1000 `}
                 src={car.img}
                 alt={car.name}
                 width="640"

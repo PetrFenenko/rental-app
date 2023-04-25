@@ -11,6 +11,7 @@ import { REVIEW_DATA } from "./ReviewData";
 
 export default function Reviews() {
   // Referencing Reviews flexbox
+
   const reviewContainter = useRef();
 
   // Defining selected review
@@ -20,6 +21,7 @@ export default function Reviews() {
   );
 
   // Handling arrow presses
+
   const handleRight = () => {
     currentReview === REVIEW_DATA.length - 1
       ? setCurrentReview(0)
@@ -32,9 +34,11 @@ export default function Reviews() {
       : setCurrentReview(currentReview - 1);
   };
 
+  // Handling dots presses
+
   const goToReview = (id) => setCurrentReview(id);
 
-  // Scrolling to the current review
+  // Scrolling to the current review after state changes
 
   useEffect(() => {
     reviewContainter.current.style.transform = `translate(-${
@@ -93,7 +97,7 @@ export default function Reviews() {
 
             <div
               ref={reviewContainter}
-              className={`flex min-w-full transition-transform duration-500 translate-x-[-${currentReview}00%]`}
+              className={`flex min-w-full transition-transform duration-500`}
             >
               {REVIEW_DATA.map((review, i) => (
                 <div
