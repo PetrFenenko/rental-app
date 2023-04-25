@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ImCircleLeft,
   ImCircleRight,
@@ -10,10 +10,16 @@ import {
 import { REVIEW_DATA } from "./ReviewData";
 
 export default function Reviews() {
+  // Referencing Reviews flexbox
+  const reviewContainter = useRef();
+
+  // Defining selected review
+
   const [currentReview, setCurrentReview] = useState(
-    Math.floor(REVIEW_DATA.length / 2)
+    Math.abs(REVIEW_DATA.length - 1) / 2
   );
 
+  // Handling arrow presses
   const handleRight = () => {
     currentReview === REVIEW_DATA.length - 1
       ? setCurrentReview(0)
@@ -28,7 +34,13 @@ export default function Reviews() {
 
   const goToReview = (id) => setCurrentReview(id);
 
-  useEffect(() => console.log(currentReview), [currentReview]);
+  // Scrolling to the current review
+
+  useEffect(() => {
+    reviewContainter.current.style.transform = `translate(-${
+      currentReview * 100
+    }%)`;
+  }, [currentReview]);
 
   return (
     <section className="w-full bg-gray-50 py-20">
@@ -80,9 +92,8 @@ export default function Reviews() {
             {/* Content */}
 
             <div
-              className={`translate-x-[-${
-                100 * currentReview
-              }%] flex transition-transform duration-500 min-w-full `}
+              ref={reviewContainter}
+              className={`flex min-w-full transition-transform duration-500 translate-x-[-${currentReview}00%]`}
             >
               {REVIEW_DATA.map((review, i) => (
                 <div
